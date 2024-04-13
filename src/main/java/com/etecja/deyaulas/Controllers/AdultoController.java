@@ -22,18 +22,33 @@ public class AdultoController {
     private AdultoRepository adultoRepository;
 
     @GetMapping("/cadastro")
-    public String CadastroCrianca(Model model) {
+    public String CadastroCrianca() {
         return "CadastroAdulto";
+    }
+
+    @GetMapping("/successo")
+    public String successo() {
+        return "successo";
+    }
+    
+    @GetMapping("/existente")
+    public String existente() {
+        return "existente";
     }
 
     @PostMapping("/cadastrar")
     public String salvarUsuario(@RequestParam String nome, @RequestParam String email, @RequestParam String senha) {
         Adulto adulto = new Adulto();
-        adulto.setNome(nome);
-        adulto.setEmail(email);
-        adulto.setSenha(senha);
-        adultoRepository.save(adulto);
-        return("redirect:/adulto/cadastro");
+        Adulto adultoExistente = adultoRepository.findByEmail(email);
+        if (adultoExistente != null) {
+            return "redirect:/adulto/existente";
+        } else {
+            adulto.setNome(nome);
+            adulto.setEmail(email);
+            adulto.setSenha(senha);
+            adultoRepository.save(adulto);
+            return("redirect:/adulto/successo");
+        }
     }
     
 }

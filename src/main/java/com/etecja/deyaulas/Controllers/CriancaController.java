@@ -25,13 +25,29 @@ public class CriancaController {
     public String CadastroCrianca(Model model) {
         return "CadastroCrianca";
     }
+
+    @GetMapping("/successo")
+    public String successo() {
+        return "successo";
+    }
+
+    @GetMapping("/existente")
+    public String existente() {
+        return "existente";
+    }
+
     @PostMapping("/cadastrar")
     public String salvarUsuario(@RequestParam String nome, @RequestParam String email, @RequestParam String senha) {
         Crianca crianca = new Crianca();
-        crianca.setNome(nome);
-        crianca.setEmail(email);
-        crianca.setSenha(senha);
-        criancaRepository.save(crianca);
-        return("redirect:/crianca/cadastro");
+        Crianca criancaExistente = criancaRepository.findByEmail(email);
+        if (criancaExistente != null) {
+            return "redirect:/crianca/existente";
+        } else {
+            crianca.setNome(nome);
+            crianca.setEmail(email);
+            crianca.setSenha(senha);
+            criancaRepository.save(crianca);
+            return("redirect:/crianca/successo");
+        }
     }
 }

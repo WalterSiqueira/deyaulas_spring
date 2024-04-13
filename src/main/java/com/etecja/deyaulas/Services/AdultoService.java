@@ -19,4 +19,8 @@ public class AdultoService {
     public void save(Adulto adulto) {
 		adultoRepository.save(adulto);
 	}
+
+    public Adulto verificarEmail(String email) {
+        return adultoRepository.findByEmail(email);
+    }
 }

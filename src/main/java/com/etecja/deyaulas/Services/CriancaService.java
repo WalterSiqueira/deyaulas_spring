@@ -19,4 +19,8 @@ public class CriancaService {
     public void save(Crianca crianca) {
 		criancaRepository.save(crianca);
 	}
+
+    public Crianca verificarEmail(String email) {
+        return criancaRepository.findByEmail(email);
+    }
 }
