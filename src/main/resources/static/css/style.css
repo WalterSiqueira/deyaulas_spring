@@ -1,0 +1,547 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+@media screen and (min-width: 320px) and (max-width: 500px) {
+  .div_logo {
+    width: 13%;
+    height: 87%;
+    margin: 2% 5% 0 0;
+  }
+  .catalogo_img {
+    width: 100%;
+    height: 85%;
+    padding: 5% 0 0 5%;
+  }
+  .header_cadastro {
+    width: 98.75vw;
+    height: 10vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: rgba(250, 220, 217, 50%);
+    backdrop-filter: blur(16px);
+    -webkit-backgrop-filter: blur(16px);
+    border: solid black 2px;
+  }
+  img {
+    height: 100%;
+    width: 100%;
+  }
+  a {
+    height: 10vh;
+  }
+
+  .mobile_icones {
+    display: block;
+    width: 60%;
+    height: 75%;
+    margin: 12% 0 0 35%;
+  }
+  .menu_icon {
+    width: 100%;
+    height: 100%;
+  }
+  .desktop_icones {
+    display: none;
+  }
+  main {
+    width: 95vw;
+    height: 90vh;
+    padding: 5% 0 0 5%;
+    background-image: url("../fundo.png");
+    background-repeat: none;
+  }
+  .div_form {
+    width: 90vw;
+    height: 75vh;
+    display: grid;
+    grid-template-areas:
+      'titulo'
+      '.'
+      'form'
+      '.';
+    grid-template-columns: auto;
+    grid-template-rows: 0.3fr 0.2fr 3fr 0.2fr;
+    background-color: rgba(187, 234, 243, 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backgrop-filter: blur(16px);
+    border: solid black 2px;
+    border-radius: 5vh;
+    margin: 10% 0 0 0;
+  }
+  form {
+    grid-area: form;
+    display: flex;
+    flex-flow: column nowrap;
+    grid-gap: 2%;
+  }
+  h2 {
+    text-align: center;
+    font-family: "Piedra", serif;
+    color: white;
+    font-size: 2.4em;
+    padding: 3% 0 0 0;
+    -webkit-text-stroke: 1px black;
+  }
+  input {
+    border-radius: 10vw;
+    width: 90%;
+    height: 100%;
+    margin: 0 5% 0 5%;
+    background-color: rgba(245, 245, 245, 0.5);
+    backdrop-filter: blur(16px);
+    border: solid rgba(255, 179, 123, 100%) 2px;
+    -webkit-backgrop-filter: blur(16px);
+  }
+  label {
+    font-size: 1.8rem;
+    font-family: "Piedra", serif;
+    text-align: left;
+    color: white;
+    margin-left: 5%;
+    -webkit-text-stroke: 1px black;
+  }
+  button {
+    width: 55%;
+    height: 15%;
+    margin: 8% 0 3% 23%;
+    border-radius: 10vh;
+    background-color: rgba(255, 179, 123, 100%);
+    color: white;
+    backdrop-filter: blur(16px);
+    -webkit-backgrop-filter: blur(16px);
+    font-size: 1.2rem;
+    font-family: "Piedra", serif;
+  }
+
+}
+@media screen and (min-width: 501px) and (max-width: 800px) {
+  .div_logo {
+    width: 8%;
+    height: 70%;
+    margin: 1% 0 0 2%;
+  }
+  .catalogo_img {
+    width: 100%;
+    height: 100%;
+  }
+  .header_cadastro {
+    width: 99.4vw;
+    height: 10vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: rgba(250, 220, 217, 50%);
+    backdrop-filter: blur(16px);
+    -webkit-backgrop-filter: blur(16px);
+    border: solid black 2px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mobile_icones {
+    display: block;
+    width: 80%;
+    height: 70%;
+    margin: 15% 0 0 0; 
+  }
+  .menu_icon {
+    width: 100%;
+    height: 100%;
+  }
+  .desktop_icones {
+    display: none;
+  }
+  main {
+    width: 95vw;
+    height: 95vh;
+    padding: 5% 0 0 5%;
+    background-image: url("../fundo.png");
+    background-repeat: none;
+  }
+  .div_form {
+    width: 90vw;
+    height: 95vh;
+    display: grid;
+    grid-template-areas:
+      'titulo'
+      '.'
+      'form';
+    grid-template-columns: auto;
+    grid-template-rows: 0.3fr 0.2fr 3.5fr;
+    background-color: rgba(187, 234, 243, 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backgrop-filter: blur(16px);
+    border: solid black 2px;
+    border-radius: 5vh;
+    margin: 1% 0 0 0;
+  }
+  form {
+    grid-area: form;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 6%;
+  }
+  h2 {
+    text-align: center;
+    font-family: "Piedra", serif;
+    color: white;
+    font-size: 3em;
+    padding: 3% 0 0 0;
+    -webkit-text-stroke: 1px black;
+  }
+  input {
+    border-radius: 10vw;
+    width: 90%;
+    height: 70%;
+    margin: 0 5% 0 5%;
+    background-color: rgba(245, 245, 245, 0.5);
+    backdrop-filter: blur(16px);
+    border: solid rgba(255, 179, 123, 100%) 2px;
+    -webkit-backgrop-filter: blur(16px);
+  }
+  label {
+    font-size: 1.8rem;
+    font-family: "Piedra", serif;
+    text-align: left;
+    color: white;
+    margin-left: 5%;
+    -webkit-text-stroke: 1px black;
+  }
+  button {
+    width: 55%;
+    height: 25%;
+    margin: 0 0 3% 23%;
+    border-radius: 10vh;
+    background-color: rgba(255, 179, 123, 100%);
+    color: white;
+    backdrop-filter: blur(16px);
+    -webkit-backgrop-filter: blur(16px);
+    font-size: 1.2rem;
+    font-family: "Piedra", serif;
+  }
+
+}
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+  .catalogo_img {
+    width: 100%;
+    height: 85%;
+    margin: 4% 0 0 15%;
+  }
+  .header_cadastro {
+    width: 99.69vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: rgba(250, 220, 217, 50%);
+    backdrop-filter: blur(16px);
+    -webkit-backgrop-filter: blur(16px);
+    border: solid black 2px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .mobile_icones {
+    display: none;
+    width: 100%;
+    height: 85%;
+    margin: 15% 0 0 15%;
+  }
+  .menu_icon {
+    width: 100%;
+    height: 100%;
+  }
+  .desktop_icones {
+    display: block;
+  }
+  main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../fundo.png");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+  }
+  .div_form {
+    width: 55vw;
+    height: 95vh;
+    display: grid;
+    grid-template-areas:
+      'titulo'
+      '.'
+      'form';
+    grid-template-columns: auto;
+    grid-template-rows: 0.3fr 0.2fr 2fr;
+    background-color: rgba(187, 234, 243, 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backgrop-filter: blur(16px);
+    border: solid black 2px;
+    border-radius: 5vh;
+  }
+  form {
+    grid-area: form;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1%;
+    margin: 0% 0 0 0;
+  }
+  h2 {
+    text-align: center;
+    font-family: "Piedra", serif;
+    color: white;
+    font-size: 4em;
+    padding: 5% 0 0 0;
+    -webkit-text-stroke: 1px black;
+  }
+  input {
+    border-radius: 10vw;
+    width: 90%;
+    height: 7%;
+    margin: 0 5% 0 5%;
+    background-color: rgba(245, 245, 245, 0.5);
+    backdrop-filter: blur(16px);
+    border: solid rgba(255, 179, 123, 100%) 2px;
+    -webkit-backgrop-filter: blur(16px);
+  }
+  label {
+    font-size: 2.5rem;
+    text-align: left;
+    font-family: "Piedra", serif;
+    color: white;
+    padding: 0 0 0 5%;
+    -webkit-text-stroke: 1px black;
+  }
+  button {
+    width: 55%;
+    height: 12%;
+    margin: 5% 0 3% 23%;
+    border-radius: 10vh;
+    background-color: rgba(255, 179, 123, 100%);
+    color: white;
+    backdrop-filter: blur(16px);
+    -webkit-backgrop-filter: blur(16px);
+    font-size: 2rem;
+    font-family: "Piedra", serif;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .catalogo_img {
+    width: 100%;
+    height: 85%;
+    margin: 4% 0 0 15%;
+  }
+  .header_cadastro {
+    width: 100vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: rgba(250, 220, 217, 50%);
+    backdrop-filter: blur(16px);
+    -webkit-backgrop-filter: blur(16px);
+    border: solid black 2px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mobile_icones {
+    display: none;
+  }
+  .desktop_icones {
+    display: block;
+  }
+    .login_img {
+      width: 100%;
+      height: 85%;
+      margin: 4% 15% 0 0;
+    }
+  main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    /*padding: 5% 0 0 5%;*/
+    background-image: url("../fundo.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .div_form {
+    width: 35vw;
+    height: 75vh;
+    display: grid;
+    grid-template-areas:
+      'titulo'
+      '.'
+      'form';
+    grid-template-columns: auto;
+    grid-template-rows: 0.3fr 0.2fr 2fr;
+    background-color: rgba(187, 234, 243, 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backgrop-filter: blur(16px);
+    border: solid black 2px;
+    border-radius: 5vh;
+  }
+  form {
+    grid-area: form;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1%;
+    margin: 2% 0 0 0;
+  }
+  h2 {
+    text-align: center;
+    font-size: 3.5em;
+    padding: 5% 0 0 0;
+    font-family: "Piedra", serif;
+    color:white;
+    -webkit-text-stroke: 1px black;
+  }
+  input {
+    border-radius: 10vw;
+    width: 90%;
+    height: 7%;
+    margin: 0 5% 0 5%;
+    border: solid rgba(255, 179, 123, 100%) 2px;
+    backdrop-filter: blur(16px);
+    -webkit-backgrop-filter: blur(16px);
+  }
+  label {
+    font-size: 2rem;
+    text-align: left;
+    padding: 0 0 0 5%;
+    font-family: "Piedra", serif;
+    color:white;
+    font-size: 2.4rem;
+    -webkit-text-stroke: 1px black;
+  }
+  button {
+    width: 55%;
+    height: 12%;
+    margin: 3% 0 5% 23%;
+    background-color: rgba(255, 179, 123, 100%);
+    color: white;
+    backdrop-filter: blur(16px);
+    -webkit-backgrop-filter: blur(16px);
+    font-size: 1.8rem;
+    border-radius: 5vh;
+  } 
+}
+@media screen and (min-width:1441px) {
+  .catalogo_img {
+    width: 100%;
+    height: 85%;
+    margin: 4% 0 0 15%;
+  }
+  .header_cadastro {
+    width: 98.9vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: rgba(250, 220, 217, 50%);
+    backdrop-filter: blur(16px);
+    -webkit-backgrop-filter: blur(16px);
+    border: solid black 2px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mobile_icones {
+    display: none;
+  }
+  .desktop_icones {
+    display: block;
+  }
+    .login_img {
+      width: 100%;
+      height: 85%;
+      margin: 4% 15% 0 0;
+    }
+  main {
+    width: 99.3vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    /*padding: 5% 0 0 5%;*/
+    background-image: url("../fundo.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .div_form {
+    width: 35vw;
+    height: 75vh;
+    display: grid;
+    grid-template-areas:
+      'titulo'
+      '.'
+      'form';
+    grid-template-columns: auto;
+    grid-template-rows: 0.3fr 0.2fr 2fr;
+    background-color: rgba(187, 234, 243, 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backgrop-filter: blur(16px);
+    border: solid black 2px;
+    border-radius: 5vh;
+  }
+  form {
+    grid-area: form;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1%;
+    margin: 2% 0 0 0;
+  }
+  h2 {
+    text-align: center;
+    font-size: 3.5em;
+    padding: 5% 0 0 0;
+    font-family: "Piedra", serif;
+    color:white;
+    -webkit-text-stroke: 1px black;
+  }
+  input {
+    border-radius: 10vw;
+    width: 90%;
+    height: 7%;
+    margin: 0 5% 0 5%;
+    border: solid rgba(255, 179, 123, 100%) 2px;
+    backdrop-filter: blur(16px);
+    -webkit-backgrop-filter: blur(16px);
+  }
+  label {
+    font-size: 2rem;
+    text-align: left;
+    padding: 0 0 0 5%;
+    font-family: "Piedra", serif;
+    color:white;
+    font-size: 2.4rem;
+    -webkit-text-stroke: 1px black;
+  }
+  button {
+    width: 55%;
+    height: 12%;
+    margin: 3% 0 5% 23%;
+    background-color: rgba(255, 179, 123, 100%);
+    color: white;
+    backdrop-filter: blur(16px);
+    -webkit-backgrop-filter: blur(16px);
+    font-size: 1.8rem;
+    border-radius: 5vh;
+  }
+}
