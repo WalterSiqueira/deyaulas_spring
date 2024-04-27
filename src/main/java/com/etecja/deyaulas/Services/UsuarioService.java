@@ -5,22 +5,22 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.etecja.deyaulas.Entities.Crianca;
-import com.etecja.deyaulas.Repositories.CriancaRepository;
+import com.etecja.deyaulas.Entities.Usuario;
+import com.etecja.deyaulas.Repositories.UsuarioRepository;
 
 @Service
-public class CriancaService {
+public class UsuarioService {
     @Autowired
-    private CriancaRepository criancaRepository;
+    private UsuarioRepository criancaRepository;
 
-    public List<Crianca> findAll() {
+    public List<Usuario> findAll() {
         return criancaRepository.findAll();
     }
-    public void save(Crianca crianca) {
+    public void save(Usuario crianca) {
 		criancaRepository.save(crianca);
 	}
 
-    public Crianca verificarEmail(String email) {
+    public Usuario verificarEmail(String email) {
         return criancaRepository.findByEmail(email);
     }
 }

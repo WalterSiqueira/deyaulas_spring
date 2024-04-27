@@ -3,8 +3,8 @@ package com.etecja.deyaulas.Controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import com.etecja.deyaulas.Entities.Crianca;
-import com.etecja.deyaulas.Repositories.CriancaRepository;
+import com.etecja.deyaulas.Entities.Usuario;
+import com.etecja.deyaulas.Repositories.UsuarioRepository;
 
 import ch.qos.logback.core.model.Model;
 
@@ -16,14 +16,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
-@RequestMapping("/crianca")
+@RequestMapping("/usuario")
 public class CriancaController {
     @Autowired
-    private CriancaRepository criancaRepository;
+    private UsuarioRepository criancaRepository;
 
     @GetMapping("/cadastro")
-    public String CadastroCrianca(Model model) {
-        return "CadastroCrianca";
+    public String CadastroUsuario(Model model) {
+        return "CadastroUsuario";
     }
 
     @GetMapping("/successo")
@@ -38,16 +38,16 @@ public class CriancaController {
 
     @PostMapping("/cadastrar")
     public String salvarUsuario(@RequestParam String nome, @RequestParam String email, @RequestParam String senha) {
-        Crianca crianca = new Crianca();
-        Crianca criancaExistente = criancaRepository.findByEmail(email);
+        Usuario crianca = new Usuario();
+        Usuario criancaExistente = criancaRepository.findByEmail(email);
         if (criancaExistente != null) {
-            return "redirect:/crianca/existente";
+            return "redirect:/usuario/existente";
         } else {
             crianca.setNome(nome);
             crianca.setEmail(email);
             crianca.setSenha(senha);
             criancaRepository.save(crianca);
-            return("redirect:/crianca/successo");
+            return("redirect:/usuario/successo");
         }
     }
 }

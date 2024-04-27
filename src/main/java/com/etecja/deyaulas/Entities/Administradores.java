@@ -7,24 +7,24 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="tb_adulto")
-public class Adulto {
-   @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private Integer id;
-   private String nome;
-   private String email;
-   private String senha;
+@Table(name="usuarios")
+public class Administradores {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String nome;
+    private String email;
+    private String senha;
 
-   public void Criança(String nome, String email, String senha) {
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
-   }
+    public void admin(String nome, String email, String senha) {
+            this.nome = nome;
+            this.email = email;
+            this.senha = senha;
+    }
 
-   public Integer getId() {
-    return id;
-   }
+    public Integer getId() {
+        return id;
+    }
 
     public String getNome() {
         return nome;
