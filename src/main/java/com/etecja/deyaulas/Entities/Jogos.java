@@ -1,5 +1,7 @@
 package com.etecja.deyaulas.Entities;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,11 +18,11 @@ public class Jogos {
     private String nome;
     private String desc;
 
-    @OneToMany(mappedBy = "jogos")
-    private JogosUsuario jogosusuario;
+    @OneToMany(mappedBy = "jogos_id")
+    private List<JogosUsuario> jogosusuario;
 
-    @OneToMany(mappedBy = "jogos")
-    private Fases fases;
+    @OneToMany(mappedBy = "jogos_id")
+    private List<Fases> fases;
 
     public String getNome() {
         return nome;

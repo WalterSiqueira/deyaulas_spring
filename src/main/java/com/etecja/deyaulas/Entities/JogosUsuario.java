@@ -1,5 +1,7 @@
 package com.etecja.deyaulas.Entities;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,7 +26,7 @@ public class JogosUsuario {
     @JoinColumn(name= "jogos_id")
     private Jogos jogos_id;
 
-    @OneToMany(mappedBy = "jogosUsuario")
-    private FasesJogosUsuario fasesJogosUsuario;
+    @OneToMany(mappedBy = "jogosUsuario_id")
+    private List<FasesJogosUsuario> fasesJogosUsuario;
 
 }

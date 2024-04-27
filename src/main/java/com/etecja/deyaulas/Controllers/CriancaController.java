@@ -36,18 +36,4 @@ public class CriancaController {
         return "existente";
     }
 
-    @PostMapping("/cadastrar")
-    public String salvarUsuario(@RequestParam String nome, @RequestParam String email, @RequestParam String senha) {
-        Usuario crianca = new Usuario();
-        Usuario criancaExistente = criancaRepository.findByEmail(email);
-        if (criancaExistente != null) {
-            return "redirect:/usuario/existente";
-        } else {
-            crianca.setNome(nome);
-            crianca.setEmail(email);
-            crianca.setSenha(senha);
-            criancaRepository.save(crianca);
-            return("redirect:/usuario/successo");
-        }
-    }
 }

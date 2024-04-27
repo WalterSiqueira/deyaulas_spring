@@ -19,7 +19,7 @@ public class Usuario {
     private String email;
     private String senha;
 
-    @OneToMany(mappedBy = "usuario")
+    @OneToMany(mappedBy = "usuario_id")
     private List<JogosUsuario> jogos;
 
     public void usuario(String nome, String email, String senha) {

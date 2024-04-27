@@ -11,16 +11,13 @@ import com.etecja.deyaulas.Repositories.UsuarioRepository;
 @Service
 public class UsuarioService {
     @Autowired
-    private UsuarioRepository criancaRepository;
+    private UsuarioRepository usuarioRepository;
 
     public List<Usuario> findAll() {
-        return criancaRepository.findAll();
+        return usuarioRepository.findAll();
     }
-    public void save(Usuario crianca) {
-		criancaRepository.save(crianca);
+    public void save(Usuario usuario) {
+		usuarioRepository.save(usuario);
 	}
 
-    public Usuario verificarEmail(String email) {
-        return criancaRepository.findByEmail(email);
-    }
 }

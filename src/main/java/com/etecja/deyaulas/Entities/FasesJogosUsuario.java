@@ -21,11 +21,7 @@ public class FasesJogosUsuario {
 
     @ManyToOne
     @JoinColumn(name = "jogosUsuario_id")
-    private JogosUsuario jogosUsuario_jogos_id;
-
-    @ManyToOne
-    @JoinColumn(name = "usuario_id")
-    private JogosUsuario jogosUsuario_usuario_id;
+    private JogosUsuario jogosUsuario_id;
 
     @ManyToOne
     @JoinColumn(name = "fases_id")
