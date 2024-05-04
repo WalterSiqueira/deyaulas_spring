@@ -19,6 +19,30 @@ public class FasesJogosUsuario {
     private char finalizada;
     private char disponivel;
 
+    public Double getHighscore() {
+        return highscore;
+    }
+
+    public void setHighscore(Double highscore) {
+        this.highscore = highscore;
+    }
+
+    public char getFinalizada() {
+        return finalizada;
+    }
+
+    public void setFinalizada(char finalizada) {
+        this.finalizada = finalizada;
+    }
+
+    public char getDisponivel() {
+        return disponivel;
+    }
+
+    public void setDisponivel(char disponivel) {
+        this.disponivel = disponivel;
+    }
+
     @ManyToOne
     @JoinColumn(name = "jogosUsuario_id")
     private JogosUsuario jogosUsuario_id;
