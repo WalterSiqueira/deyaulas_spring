@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+  <title>Dashboard do Administrador</title>
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <button onclick="mostrarFormulario('form1')">Formulário 1</button>
+  <button onclick="mostrarFormulario('form2')">Formulário 2</button>
+  <button onclick="mostrarFormulario('form3')">Formulário 3</button>
+  <button onclick="mostrarFormulario('form4')">Formulário 4</button>
+
+  <form id="form1" class="formulario" style="display: none;">
+    <h1>Fases</h1>
+    <label>Nome da fase:</label>
+    <input type="text"><br>
+    <button>Enviar</button>
+  </form>
+  <form id="form2" class="formulario" style="display: none;">
+    <h1>Itens do jogo</h1>
+    <label>nome do item:</label>
+    <input type="text"><br>
+    <label>pontuação do item:</label>
+    <input type="number"><br>
+  </form>
+  <form id="form3" class="formulario" style="display: none;">
+    <h1>Jogo</h1>
+    <label>Nome do jogo:</label>
+    <input type="text"><br>
+    <label>descrição do jogo:</label>
+    <textarea rows="4" columns="50"></textarea><br>
+  </form>
+  <form id="form4" class="formulario" style="display: none;">
+    <h1>Administrador</h1>
+    <label>Nome:</label>
+    <input type="text" required><br>
+    <label>Email:</label>
+    <input type="email" required><br>
+    <label>Senha</label>
+    <input type="password" required><br>
+  </form>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>

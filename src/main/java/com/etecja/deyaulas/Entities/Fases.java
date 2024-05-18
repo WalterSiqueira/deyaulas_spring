@@ -23,9 +23,6 @@ public class Fases {
     @ManyToOne
     @JoinColumn(name = "jogos_id")
     private Jogos jogos_id;
-    
-    @OneToMany(mappedBy = "fases_id")
-    private List<FasesJogosUsuario> fasesJogosUsuario;
 
     public String getNome() {
         return nome;
