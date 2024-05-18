@@ -20,4 +20,16 @@ public class UsuarioService {
 		usuarioRepository.save(usuario);
 	}
 
+    public boolean emailExists(String email) {
+        return usuarioRepository.findByEmail(email).isPresent();
+    }
+
+    public String registerUsuario(Usuario usuario) {
+        if (emailExists(usuario.getEmail())) {
+            return "Email já está em uso.";
+        }
+        usuarioRepository.save(usuario);
+        return "Usuário registrado com sucesso.";
+    }
+
 }
