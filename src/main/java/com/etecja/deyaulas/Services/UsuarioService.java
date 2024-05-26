@@ -1,6 +1,7 @@
 package com.etecja.deyaulas.Services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +31,29 @@ public class UsuarioService {
         }
         usuarioRepository.save(usuario);
         return "Usuário registrado com sucesso.";
+    }
+
+    public boolean updateUsuario(Long id, Usuario usuario) {
+        Optional<Usuario> usuarioExistente = usuarioRepository.findById(id);
+        if (usuarioExistente.isPresent()) {
+            Usuario u = usuarioExistente.get();
+            u.setNome(usuario.getNome());
+            u.setEmail(usuario.getEmail());
+            // Atualize outros campos conforme necessário
+            usuarioRepository.save(u);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean deleteUsuario(Long id) {
+        if (usuarioRepository.existsById(id)) {
+            usuarioRepository.deleteById(id);
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
