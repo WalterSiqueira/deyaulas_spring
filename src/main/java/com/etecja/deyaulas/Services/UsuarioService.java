@@ -35,13 +35,19 @@ public class UsuarioService {
 
     public boolean updateUsuario(Long id, Usuario usuario) {
         Optional<Usuario> usuarioExistente = usuarioRepository.findById(id);
-        if (usuarioExistente.isPresent()) {
-            Usuario u = usuarioExistente.get();
-            u.setNome(usuario.getNome());
-            u.setEmail(usuario.getEmail());
-            // Atualize outros campos conforme necessário
+    if (usuarioExistente.isPresent()) {
+        Usuario u = usuarioExistente.get();
+        u.setNome(usuario.getNome());
+        u.setEmail(usuario.getEmail());
+        // Adicione outras validações de campos conforme necessário
+
+        try {
             usuarioRepository.save(u);
             return true;
+        } catch (Exception e) {
+            // Logar o erro ou lançar uma exceção específica, conforme necessário
+            throw new RuntimeException("Erro ao atualizar o usuário com ID: " + id, e);
+        }
         } else {
             return false;
         }
