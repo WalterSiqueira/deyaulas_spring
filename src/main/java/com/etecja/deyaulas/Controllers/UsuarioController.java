@@ -8,29 +8,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 
 import com.etecja.deyaulas.Entities.Usuario;
-import com.etecja.deyaulas.Repositories.UsuarioRepository;
 import com.etecja.deyaulas.Services.UsuarioService;
 
 import org.springframework.ui.Model;
-
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-
-
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/usuario")
 public class UsuarioController {
-    @SuppressWarnings("unused")
-    @Autowired
-    private UsuarioRepository usuarioRepository;
 
     @Autowired
     private UsuarioService usuarioService;
@@ -46,20 +31,30 @@ public class UsuarioController {
             return "redirect:/usuario/existente";
         } else {
             usuarioService.registerUsuario(usuario);
-            return "redirect:/usuario/successo";
+            return "redirect:/usuario/sucesso";
         }
     }
 
-
-    @GetMapping("/successo")
-    public String successo() {
-        return "successo";
+    @GetMapping("/sucesso")
+    public String sucesso() {
+        return "sucesso";
     }
 
     @GetMapping("/existente")
     public String existente() {
         return "existente";
-        
+    }
+
+    @GetMapping("/atualizado")
+    public String usuarioAtualizado(Model model) {
+        model.addAttribute("message", "Usuário atualizado com sucesso!");
+        return "resultado";
+    }
+
+    @GetMapping("/nao_encontrado")
+    public String usuarioNaoEncontrado(Model model) {
+        model.addAttribute("message", "Usuário não encontrado!");
+        return "resultado";
     }
 
     @GetMapping("/todos")
@@ -69,23 +64,27 @@ public class UsuarioController {
         return "listaUsuarios";
     }
 
-    @GetMapping("/atualizar")
-    public String atualizar_html() {
-        return "updateUsuario";
-        
+    @PostMapping("/atualizar")
+    public String atualizarUsuario(@ModelAttribute Usuario usuario, Model model) {
+        Usuario usuarioExistente = usuarioService.findById(usuario.getId());
+        if (usuarioExistente != null) {
+            usuarioExistente.setNome(usuario.getNome());
+            usuarioExistente.setSenha(usuario.getSenha());
+            usuarioService.updateUsuario(usuarioExistente);
+            return "redirect:/usuario/atualizado";
+        } else {
+            return "redirect:/usuario/nao_encontrado";
+        }
     }
 
-    @PutMapping("/atualizar/{id}")
-    public ResponseEntity<String> atualizarUsuario(@PathVariable Long id, @RequestBody Usuario usuario) {
-        try {
-            boolean atualizado = usuarioService.updateUsuario(id, usuario);
-            if (atualizado) {
-                return new ResponseEntity<>("Usuário atualizado com sucesso!", HttpStatus.OK);
-            } else {
-                return new ResponseEntity<>("Usuário não encontrado!", HttpStatus.NOT_FOUND);
-            }
-        } catch (Exception e) {
-            return new ResponseEntity<>("Erro ao atualizar o usuário!", HttpStatus.INTERNAL_SERVER_ERROR);
+    @GetMapping("/atualizar/{id}")
+    public String mostrarFormularioAtualizacao(@PathVariable("id") Long id, Model model) {
+        Usuario usuario = usuarioService.findById(id);
+        if (usuario != null) {
+            model.addAttribute("usuario", usuario);
+            return "updateUsuario";
+        } else {
+            return "redirect:/usuario/nao_encontrado";
         }
     }
 
@@ -102,5 +101,4 @@ public class UsuarioController {
             return new ResponseEntity<>("Erro ao deletar o usuário!", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
 }

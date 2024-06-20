@@ -33,24 +33,12 @@ public class UsuarioService {
         return "Usuário registrado com sucesso.";
     }
 
-    public boolean updateUsuario(Long id, Usuario usuario) {
-        Optional<Usuario> usuarioExistente = usuarioRepository.findById(id);
-    if (usuarioExistente.isPresent()) {
-        Usuario u = usuarioExistente.get();
-        u.setNome(usuario.getNome());
-        u.setEmail(usuario.getEmail());
-        // Adicione outras validações de campos conforme necessário
+    public Usuario findById(Long id) {
+        return usuarioRepository.findById(id).orElse(null);
+    }
 
-        try {
-            usuarioRepository.save(u);
-            return true;
-        } catch (Exception e) {
-            // Logar o erro ou lançar uma exceção específica, conforme necessário
-            throw new RuntimeException("Erro ao atualizar o usuário com ID: " + id, e);
-        }
-        } else {
-            return false;
-        }
+    public void updateUsuario(Usuario usuario) {
+        usuarioRepository.save(usuario);
     }
 
     public boolean deleteUsuario(Long id) {
